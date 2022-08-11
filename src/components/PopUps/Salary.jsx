@@ -29,13 +29,12 @@ export default function SalaryPopUp({active, setActive}){
 
   return(
     <>
-      {loading && <Preloader/>}
-    
-      <PopUp active={active} setActive={setActive}>
-        <h1>Зарплата сотрудника :</h1>
-        {error && <span>{error}</span>}
-        {data && <h1>{data}</h1>}
-      </PopUp>
+      {loading ? <Preloader/> :
+        <PopUp active={active} setActive={setActive}>
+          <h1>Зарплата сотрудника :</h1>
+          {error && <span>{error}</span>}
+          {data && <h1>{data}</h1>}
+        </PopUp>}
     </>
   )
 }
