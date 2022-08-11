@@ -56,7 +56,6 @@ export default observer(function SewerProfile(){
 
     handleFetch({method: 'get', url: `/sewer/${User.user.id}`})
       .then(res => {
-        console.log(res);
         setData(res);
         reset(res)
       }).catch(e => {
@@ -159,6 +158,10 @@ export default observer(function SewerProfile(){
                 <div>
                   <div>Цена(за 1шт):</div>
                   <div>{data.unitPrice || "нету"}</div>
+                </div>
+                <div>
+                  <div>Статус:</div>
+                  <div>{data.status}</div>
                 </div>
               </div>
             </div>

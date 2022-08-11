@@ -40,8 +40,8 @@ export default function OrderPopUp({active, setActive, submitFunc, defaultValues
     try{
       setLoading(true);
       const res  = await submitFunc(values);
+      
       if(res){
-        console.log(res);
         setActive(false)
       }
     }catch(e){

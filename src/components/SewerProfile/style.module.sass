@@ -10,9 +10,11 @@
 .contentTable
   div
     height: 40px
-     @include flex-type($justify: space-between, $align: none)
+    display: flex
+    justify-content: space-between
     border-bottom: 1px solid #b4adf8
     div
       text-transform: uppercase
       font-weight: 500
-       @include flex-type($justify: none, $align: center)
+      display: flex
+      align-items: center
