@@ -12,9 +12,12 @@ import Account from '../../components/Account';
 export default observer(function Profile(){
   const [activeTab, setActiveTab] = useState(1);
 
+  //функция для табов
   const toggleTab = (index) => {
     setActiveTab(index)
   }
+
+  //функция для кнпоки выхода
   const logOut = () => {
     User.removeUser();
   }

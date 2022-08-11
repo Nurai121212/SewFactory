@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { useNavigate }  from 'react-router-dom';
 import { useTable, useGlobalFilter, useAsyncDebounce, useFilters } from "react-table";
 
+//поиск поиск
 function GlobalFilter({
   preGlobalFilteredRows,
   globalFilter,
@@ -32,6 +33,7 @@ function GlobalFilter({
   )
 };
 
+//фильтрация
 export function SelectColumnFilter({
   column: { filterValue, setFilter, preFilteredRows, id },
 }) {
@@ -62,6 +64,7 @@ export function SelectColumnFilter({
   );
 };
 
+//таблица
 function Table({ columns, data, url }) {
   const navigate = useNavigate();
   const { 

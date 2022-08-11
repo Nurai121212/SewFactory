@@ -25,6 +25,7 @@ export default observer(function Orders(){
       })
   }, []);
 
+  //столбцы для таблицы
   const columns = useMemo(() => [
     {Header: 'Модель', accessor : 'clothesType', Filter: SelectColumnFilter, filter: 'includes'},
     {Header: 'Кол-во', accessor : 'amount', Filter: SelectColumnFilter, filter: 'includes'},

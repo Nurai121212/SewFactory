@@ -66,6 +66,7 @@ export default observer(function OrderPage(){
     }})
   };
 
+  //Отправление заказа
   const sendOrder = () => {
     setLoading(true);
 

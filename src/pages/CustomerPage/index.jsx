@@ -1,5 +1,5 @@
 import s from './style.module.sass';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import User from '../../store/User';
 import handleFetch from '../../apiRequest';
 import { useForm } from 'react-hook-form';

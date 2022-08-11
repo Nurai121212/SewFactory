@@ -56,6 +56,7 @@ export default observer(function SewerProfile(){
 
     handleFetch({method: 'get', url: `/sewer/${User.user.id}`})
       .then(res => {
+        console.log(res);
         setData(res);
         reset(res)
       }).catch(e => {
@@ -144,12 +145,16 @@ export default observer(function SewerProfile(){
             <div className={s.contentBody}>
               <div className={s.contentTable}>
                 <div>
+                  <div>Отдел:</div>
+                  <div>{data.departmentName}</div>
+                </div>
+                <div>
                   <div>Кол-во:</div>
-                  <div>{data.amount || "нету"}</div>
+                  <div>{data.needAmount || "нету"}</div>
                 </div>
                 <div>
                   <div>Модель:</div>
-                  <div>{data.clothType || "нету"}</div>
+                  <div>{data.clothesType || "нету"}</div>
                 </div>
                 <div>
                   <div>Цена(за 1шт):</div>

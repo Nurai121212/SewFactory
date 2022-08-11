@@ -14,14 +14,17 @@ export default observer(function Users(){
   const [data, setData] = useState(null);
   const [activeTab, setActiveTab] = useState(1);
 
+  //загрузка заказчиков
   const loadCustomers = useCallback(() => {
     return handleFetch({method: 'get', url: `/customer`})
   }, [])
 
+  //загрузка сотрудников
   const loadSewers = useCallback(() => {
     return handleFetch({method: 'get', url: `/sewer`})
   }, [])
 
+  //функция для загружения данных
   const loadData =useCallback(async() => {
     try{
       const [customers, sewers] = await Promise.all([loadCustomers(), loadSewers()]);
@@ -42,10 +45,12 @@ export default observer(function Users(){
     }
   }, [loadData]);
 
+  //функция для табов
   const toggleTab = (index) => {
     setActiveTab(index)
   }
 
+  //столбцы для таблицы заказчиков
   const columnsCustomer = useMemo(() => [
     {
       Header: 'ФИО', 
@@ -57,6 +62,7 @@ export default observer(function Users(){
     }
   ], []);
 
+  //столбцы для таблицы сотрудников
   const columnsSewer = useMemo(() => [
     {
       Header: 'ФИО', 

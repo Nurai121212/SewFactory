@@ -1,8 +1,7 @@
+@import '../../assets/styles/mixins&vars'
+
 .formFooter
   max-width: 600px
   width: 100%
-  display: flex
-  justify-content: space-between
-  flex-wrap: wrap
+  @include flex-type($justify: space-between, $align: center, $wrap: wrap)
   gap: 20px
-  align-items: center

@@ -13,6 +13,7 @@ import MyButton from '../../components/UI/MyButton';
 import Preloader from '../../components/Preloader';
 import Error from '../../components/Error';
 
+//валидация
 const schema = yup.object().shape({
   departmentName: yup.string().required('Введите название'),
   needAmount: yup.number().required(),
@@ -49,6 +50,7 @@ export default observer(function SewerPage(){
       })
   }, [reset, loading, params]);
 
+  //функция отправки формы
   const onSubmit = (values) => {
     setLoading(true);
   
@@ -62,6 +64,7 @@ export default observer(function SewerPage(){
       })
   };
 
+  //функция удаления профиля
   const onDelete = (e) => {
     e.preventDefault();
     setLoading(true)
