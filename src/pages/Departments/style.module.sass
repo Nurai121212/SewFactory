@@ -1,0 +1,13 @@
+@import '../../assets/styles/mixins&vars'
+
+.departmentsHead
+  width: 100%
+  @include flex-type($justify: space-between, $align: center)
+  h1
+    @extend %title
+
+.departmentsFooter
+  margin-top: 90px
+  h2
+    @extend %title
+    text-align: center

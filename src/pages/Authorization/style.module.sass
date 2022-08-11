@@ -1,0 +1,52 @@
+@import '../../assets/styles/mixins&vars'
+  
+.authBody
+  max-width: 840px
+  width: 100%
+  padding: 50px 40px
+  background: #fff
+  border-radius: 20px
+  margin: 0 auto
+  @include flex-type($justify: space-between, $align: center)
+
+.authLeft
+  max-width: 400px
+  width: 100%
+  @include flex-type($justify: none, $align: center, $direction: column)
+  span
+    margin-top: 25px
+    @extend %errorText
+  h1
+    @extend %title
+  button
+      font-size: 18px
+      line-height: 20px
+      font-weight: 500
+
+.authRight
+  width: 290px
+  height: 300px
+  background-image: url("../../assets/imgs/auth-frame.svg")
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: contain
+
+.radioContainer
+  width: 100%
+  @include flex-type($justify: none, $align: none, $direction: column)
+  gap: 10px
+  div
+    @include flex-type($justify: space-around, $align: none)
+  span
+    @extend %errorText
+
+@media only screen and (max-width: 950px)
+  .authBody
+    max-width: 100%
+    margin: 70px 0
+    height: 100%
+    gap: 20px
+    @include flex-type($justify: center, $align: center, $direction: column-reverse)
+  .authRight
+    max-width: 128px
+    height: 139px

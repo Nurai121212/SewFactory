@@ -1,0 +1,41 @@
+@import '../../assets/styles/mixins&vars'
+  
+.departmentContainer
+  padding: 40px 35px
+  border-radius: 20px
+  background: $background
+
+.departmentContent
+  .contentTitle
+    h1
+      margin: 0 0 20px 0
+      @extend %title
+    span
+      padding: 3px 0
+      font-weight: 500
+      border-bottom: 3px solid $hover
+      text-transform: uppercase
+  .contentTable
+    max-width: 300px
+    width: 100%
+    margin-top: 66px
+    div
+      height: 40px
+      display: flex
+      justify-content: space-between
+      div
+        text-transform: uppercase
+        font-weight: 500
+        display: flex
+        align-items: center
+
+
+.departmentFooter
+  margin-top: 66px
+  display: flex
+  flex-wrap: wrap
+  gap: 30px
+  h1
+    @extend %title
+    color: red
+      

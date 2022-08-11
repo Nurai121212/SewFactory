@@ -1,0 +1,19 @@
+@import '../../assets/styles/mixins&vars'
+
+.preloader
+  width: 100%
+  height: 100%
+  background: #ffffffa5
+  @include flex-type($justify: center, $align: center)
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-right: -50%
+  transform: translate(-50%, -50%)
+
+.loadImg
+  width: 100px
+  height: 100px
+  img
+    width: 100%
+    height: 100%

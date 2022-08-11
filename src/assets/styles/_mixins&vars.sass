@@ -1,0 +1,20 @@
+$hover: #00c21a
+$background: #fff
+$pink: #fe5378
+  
+%title
+  font-size: 24px
+  line-height: 26px
+  font-weight: 500
+
+%errorText
+  font-weight: 500
+  font-style: 18px
+  color: red
+
+@mixin flex-type($flex: flex, $justify, $align, $wrap: none, $direction: none) 
+  display: $flex 
+  justify-content: $justify 
+  align-items: $align 
+  flex-wrap: $wrap  
+  flex-direction: $direction

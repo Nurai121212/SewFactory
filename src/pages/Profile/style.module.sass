@@ -1,0 +1,36 @@
+@import '../../assets/styles/mixins&vars'
+  
+.tabHeader
+  margin-top: 35px
+  display: flex
+  background: #edebeb
+
+.profileHead
+  cursor: pointer
+  width: 159px
+  padding: 10px 0
+  height: 45px
+  text-align: center
+  background: #edebeb
+  font-size: 20px
+  line-height: 21px
+  font-weight: 500
+  transition: .2s
+  &:hover
+    background: $background
+  &.active
+    background: $background
+
+.profileContent
+  background: $background
+  padding: 25px
+  display: none
+  &.active
+    display: block
+
+.logOutBtn
+  @include flex-type($justify: space-between, $align: center)
+  p
+    font-size: 20px
+    line-height: 21px
+    font-weight: 500

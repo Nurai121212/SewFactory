@@ -1,0 +1,13 @@
+@import '../../assets/styles/mixins&vars'
+
+.myOrdersHead
+  width: 100%
+  @include flex-type($justify: space-between, $align: center)
+  h1
+    @extend %title
+
+.myOrdersFooter
+  margin-top: 90px
+  h2
+    @extend %title
+    text-align: center

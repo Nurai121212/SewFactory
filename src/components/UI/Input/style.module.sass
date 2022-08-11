@@ -1,0 +1,53 @@
+@import '../../../assets/styles/mixins&vars'
+    
+.myInput
+    gap: 10px
+    width: 100%
+    @include flex-type($justify: none, $align: none, $direction: column)
+    span
+        @extend %errorText
+    input
+        background: transparent
+        height: 43px
+        padding-left: 16px
+        font-size: 20px
+        line-height: 21px
+        &:not([disabled])
+            border: 1px solid #b4adf8
+            &:focus
+                outline: none
+        &:disabled
+            border: 1px solid #707071
+        
+
+.radioInput
+    position: relative
+    label
+        cursor: pointer
+        padding-left: 25px
+        line-height: 22px
+    input[type="radio"]
+        cursor: pointer
+        position: absolute
+        display: inline-block
+        width: 17px
+        height: 18px
+        left: 0
+        bottom: 1px
+        border-radius: 20px
+        background: #dedede
+        &:checked
+            background: $pink
+
+.selectContainer
+    width: 100%
+    @include flex-type($justify: none, $align: none, $direction: column)
+    gap: 10px
+    select
+        height: 45px
+        padding: 0 10px
+        border: 1px solid #b4adf8
+        width: 100%
+        &:focus
+            outline: 0
+        

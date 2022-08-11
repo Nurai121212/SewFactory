@@ -1,0 +1,9 @@
+@import '../../../assets/styles/mixins&vars'
+
+form
+    width: 100%
+    margin: 47px 0
+    gap: 38px
+    @include flex-type($justify: none, $align: center, $direction: column)
+    span
+        @extend %errorText

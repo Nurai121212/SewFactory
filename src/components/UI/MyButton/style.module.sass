@@ -1,0 +1,19 @@
+@import '../../../assets/styles/mixins&vars'
+  
+.myButton
+  max-width: 260px
+  width: 100%
+  border: 0
+  height: 35px
+  background: $hover
+  border-radius: 20px
+  color: $background
+  font-size: 20px
+  line-height: 22px
+  transition: .3s
+  &:hover
+    &:not([disabled])
+      background: #467c52
+  &:disabled
+    background: #B1BBD0
+    color: $background
