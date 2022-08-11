@@ -12,7 +12,7 @@ import MyButton from '../UI/MyButton';
 
 //валидация
 const schema = yup.object().shape({
-  fio: yup.string().required('Введите ФИО').matches(/^[ЁёА-яA-z]+$/, 'Только буквы'),
+  fio: yup.string().required('Введите ФИО').matches(/^[ЁёА-яA-z ]+$/, 'Только буквы'),
   phoneNumber: yup.string().required("Введите Номер Телефона").matches(/\d+/, 'Только цифры')
 })
 

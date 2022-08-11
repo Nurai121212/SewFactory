@@ -10,7 +10,7 @@ import Form from '../UI/Form';
 //валидация
 const schema = yup.object().shape({
   amount: yup.number().required(),
-  clothesType: yup.string().required('Введите Модель').matches(/^[ЁёА-яA-z]+$/, 'Только буквы'),
+  clothesType: yup.string().required('Введите Модель').matches(/^[ЁёА-яA-z ]+$/, 'Только буквы'),
   unitPrice: yup.number().required(),
   description: yup.string()
 })

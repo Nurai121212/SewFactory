@@ -21,7 +21,7 @@ export default observer(function SewerProfile(){
 
   //валидация
   const schema = yup.object().shape({
-    fio: yup.string().required().matches(/^[ЁёА-яA-z]+$/, 'Только буквы'),
+    fio: yup.string().required().matches(/^[ЁёА-яA-z ]+$/, 'Только буквы'),
     phoneNumber: yup.string().required().matches(/\d+/, 'Только цифры'),
     departmentId: !data && yup.number().required()
   })
