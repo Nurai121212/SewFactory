@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import User from '../../store/User';
 import handleFetch from '../../apiRequest';
 import { useForm } from 'react-hook-form';
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate, Navigate} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Form from '../../components/UI/Form';
 import { Input } from '../../components/UI/Input';
@@ -12,6 +12,7 @@ import Preloader from '../../components/Preloader';
 import Error from '../../components/Error';
 
 export default observer(function CustomerProfile(){
+  const navigate = useNavigate();
   const params = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -38,7 +39,9 @@ export default observer(function CustomerProfile(){
     setLoading(true);
 
     handleFetch({method: 'delete', url: `/customer/${params.id}`})
-      .catch(e => {
+      .then(() => {
+        return navigate(-1)
+      }).catch(e => {
         console.log(e);
         if (e.response.status === 500) {
           setError(`Ошибка. Убедитесь, что у заказчика нету дейвствующих заказов`)
@@ -50,36 +53,40 @@ export default observer(function CustomerProfile(){
       })
   }
 
-  return(
-    <>
-      { loading ? <Preloader/> : noData ? <Error/> : 
-      <div className={s.customerContainer}>
-        <h1>Заказчик №{params.id}</h1>
-        <Form>
-          {error && <span>{error}</span>}
-          <Input
-            disabled={User.premissions.isAdmin}
-            id='fio'
-            label='ФИО:'
-            {...register("fio")}
-          />
-          <Input
-            disabled={User.premissions.isAdmin}
-            id='email'
-            label='Почта:'
-            {...register("email")}
-          />
-          <Input
-            disabled={User.premissions.isAdmin}
-            id='phoneNumber'
-            label='Номер Телефона:'
-            {...register("phoneNumber")}
-          />
-          <MyButton disabled={loading} onClick={onDelete}>
-            Удалить
-          </MyButton>
-        </Form>
-      </div> }
-    </>
-  )
+  if(User.user && User.premissions.isAdmin){
+    return(
+      <>
+        { loading ? <Preloader/> : noData ? <Error/> : 
+        <div className={s.customerContainer}>
+          <h1>Заказчик №{params.id}</h1>
+          <Form>
+            {error && <span>{error}</span>}
+            <Input
+              disabled={User.premissions.isAdmin}
+              id='fio'
+              label='ФИО:'
+              {...register("fio")}
+            />
+            <Input
+              disabled={User.premissions.isAdmin}
+              id='email'
+              label='Почта:'
+              {...register("email")}
+            />
+            <Input
+              disabled={User.premissions.isAdmin}
+              id='phoneNumber'
+              label='Номер Телефона:'
+              {...register("phoneNumber")}
+            />
+            <MyButton disabled={loading} onClick={onDelete}>
+              Удалить
+            </MyButton>
+          </Form>
+        </div> }
+      </>
+    )
+  }
+
+  return <Navigate to={'/'}/>
 })

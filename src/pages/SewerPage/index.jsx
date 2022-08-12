@@ -142,5 +142,5 @@ export default observer(function SewerPage(){
     )
   }
 
-  return <Navigate to={'/auth'}/>
+  return <Navigate to={'/'}/>
 });

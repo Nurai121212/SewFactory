@@ -23,7 +23,7 @@ export default observer(function Profile(){
   }
 
   if(!User.user){
-    return <Navigate to={'/auth'}/>
+    return <Navigate to={'/'}/>
   }
 
   return(

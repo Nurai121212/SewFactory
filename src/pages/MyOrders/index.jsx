@@ -70,5 +70,5 @@ export default observer(function MyOrders(){
     )
   }
 
-  return <Navigate to={'/auth'}/>
+  return <Navigate to={'/'}/>
 })

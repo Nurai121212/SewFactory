@@ -86,5 +86,5 @@ export default observer(function DepartmentPage(){
     )
   }
 
-  return <Navigate to={'/auth'}/>
+  return <Navigate to={'/'}/>
 })

@@ -113,5 +113,5 @@ export default observer(function Users(){
     )
   }
 
-  return <Navigate to={'/auth'}/>
+  return <Navigate to={'/'}/>
 })

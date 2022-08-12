@@ -48,5 +48,5 @@ export default observer(function Orders(){
     )
   }
 
-  return <Navigate to={'/auth'}/>
+  return <Navigate to={'/'}/>
 })

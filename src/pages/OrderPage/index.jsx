@@ -156,5 +156,5 @@ export default observer(function OrderPage(){
     )
   }
 
-  return <Navigate to={'/auth'}/>
+  return <Navigate to={'/'}/>
 })
