@@ -16,7 +16,7 @@ import Error from '../../components/Error';
 //валидация
 const schema = yup.object().shape({
   departmentName: yup.string().required('Введите название'),
-  needAmount: yup.number().required(),
+  needAmount: yup.number().required().moreThan(0),
   status: yup.string().required('Поле обязательно').matches(/^[A-Z]+$/, 'Только заглавные буквы')
 })
 
@@ -59,8 +59,6 @@ export default observer(function SewerPage(){
         console.log(e);
   
         setError('Произошла ошибка. Попробуйте еще раз')
-      }).finally(() => {
-        setLoading(false)
       })
   };
 
@@ -73,8 +71,6 @@ export default observer(function SewerPage(){
       .catch(e => {
         console.log(e);
         setError('Произошла ошибка. Попробуйте еще раз')
-      }).finally(() => {
-        setLoading(false)
       })
   };
 
