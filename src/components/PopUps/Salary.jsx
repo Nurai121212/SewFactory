@@ -33,7 +33,7 @@ export default function SalaryPopUp({active, setActive}){
         <PopUp active={active} setActive={setActive}>
           <h1>Зарплата сотрудника :</h1>
           {error && <span>{error}</span>}
-          {data && <h1>{data}</h1>}
+          {data && <h1>{data}сом</h1>}
         </PopUp>}
     </>
   )
