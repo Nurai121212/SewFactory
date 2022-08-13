@@ -59,6 +59,8 @@ export default observer(function SewerPage(){
         console.log(e);
   
         setError('Произошла ошибка. Попробуйте еще раз')
+      }).finally(() => {
+        setLoading(false)
       })
   };
 
@@ -71,6 +73,8 @@ export default observer(function SewerPage(){
       .catch(e => {
         console.log(e);
         setError('Произошла ошибка. Попробуйте еще раз')
+      }).finally(() => {
+        setLoading(false)
       })
   };
 
